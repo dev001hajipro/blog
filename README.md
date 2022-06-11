@@ -1,1 +1,3 @@
-Example site modified from https://github.com/gohugoio/hugoBasicExample
+# 開発用ブログ
+
+[開発用ブログ](https://dev001hajipro.github.io/blog/)
