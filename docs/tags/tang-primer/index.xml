@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tang PriMER on サンプルサイト</title><link>https://dev001hajipro.github.io/blog/tags/tang-primer/</link><description>Recent content in Tang PriMER on サンプルサイト</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 07 May 2022 17:57:05 +0900</lastBuildDate><atom:link href="https://dev001hajipro.github.io/blog/tags/tang-primer/index.xml" rel="self" type="application/rss+xml"/><item><title>Tang PriMER Install Problem</title><link>https://dev001hajipro.github.io/blog/p/tang-primer-install-problem/</link><pubDate>Sat, 07 May 2022 17:57:05 +0900</pubDate><guid>https://dev001hajipro.github.io/blog/p/tang-primer-install-problem/</guid><description>&lt;p>2011年ごろのPCにWindow10 Homeをクリーンインストールして&lt;a class="link" href="https://tang.sipeed.com/en/getting-started/" target="_blank" rel="noopener"
+>SiPEEDTang PriMER公式サイトのGetting Started&lt;/a>で環境を作ったら２つエラーが発生しました。ここでは以下２つの解決方法を書きます。&lt;/p>
+&lt;ul>
+&lt;li>msvc110.ddlのインストール方法&lt;/li>
+&lt;li>ライセンスファイルの更新&lt;/li>
+&lt;/ul>
+&lt;h2 id="20220507時点の最新のファイル名">2022/05/07時点の最新のファイル名&lt;/h2>
+&lt;p>公式の手順では明記されてませんが、2022/05/07現在以下が最新のようです。ライセンスは定期的に更新されているようです。&lt;/p>
+&lt;ul>
+&lt;li>Anlogic_20220703.lic&lt;/li>
+&lt;li>TD_RELEASE_March2020_r4.6.4_64bit.msi&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="msvc110dllがないエラー">msvc110.dllがないエラー&lt;/h2>
+&lt;p>最初に公式サイトに従いTang Dinasty IDE(=TD)をインストールします。インストールは問題なくできますが、起動するとmsvc110.dllがないというエラーが発生します。&lt;/p>
+&lt;p>対応としては、Microsoft公式にある&lt;a class="link" href="https://www.microsoft.com/ja-jp/download/details.aspx?id=26999" target="_blank" rel="noopener"
+>Microsoft Visual C++ 2010 Service Pack 1 再頒布可能パッケージ MFC のセキュリティ更新プログラム&lt;/a> をインストールします。赤いダウンロードボタンを押すと、次のダイアログ画面で、&lt;code>vcredist_x64.exe&lt;/code>が選択できます。これをインストールするとTDが起動できます。&lt;/p>
+&lt;h2 id="未署名のデバイスドライバーのインストール">未署名のデバイスドライバーのインストール&lt;/h2>
+&lt;p>これは手順通りにやれば問題ないです。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bat" data-lang="bat">&lt;span class="line">&lt;span class="cl">bcdedit.exe -set loadoptions DISABLE_INTEGRITY_CHECKS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bcdedit.exe -set TESTSIGNING ON
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>UEFIの場合はセキュアブートの無効も必要だそうです。&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;h2 id="run-003-error-license-expiredライセンス期限切れエラー">&lt;code>RUN-003 ERROR: License expired!&lt;/code>ライセンス期限切れエラー&lt;/h2>
+&lt;p>GitHubのサンプルプロジェクトをビルドしてTangPriMERで動かす時に、&lt;code>RUN-003 ERROR: License expired!&lt;/code>ライセンス期限切れエラーが発生します。&lt;/p>
+&lt;p>対応としては、Anlogic_20220703.licをAnlogic.licにしてC:\Anlogic\TD4.6.4\license\に
+配置します&lt;/p></description></item></channel></rss>
