@@ -1,0 +1,35 @@
+---
+title: '2024-12-29 create-react-routerのメモ'
+publishedAt: '2024-12-29'
+summary: 'Remixのチュートリアルを試してみる。'
+---
+
+## Could not create a remix tutotial project.
+
+2024/10/29 I found bug. [Address-Book Tutorial - Failed to Install Dependencies #12642](https://github.com/remix-run/react-router/issues/12642)
+
+```sh
+$ npx create-react-router@latest --template remix-run/react-router/tutorials/address-book
+```
+Currently, the above command will not work. So, we need to open the package.json file and
+change the react-router version to 7.1.1. and then run the below command.
+
+
+```sh
+$ npm install
+$ npm run dev
+```
+
+## 現在、React routerのチュートリアルプロジェクトが作れなかった。
+
+2024/10/29 バグを見つけた。[Address-Book Tutorial - Failed to Install Dependencies #12642](https://github.com/remix-run/react-router/issues/12642)
+
+```sh
+$ npx create-react-router@latest --template remix-run/react-router/tutorials/address-book
+```
+以下のコマンドを実行するとプロジェクトができるがnpm installでエラーが出る。package.jsonを開いてreact-routerのバージョンを7.1.1に変更してから以下のコマンドを実行する。
+
+```sh
+$ npm install
+$ npm run dev
+```
